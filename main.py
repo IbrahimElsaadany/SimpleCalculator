@@ -21,7 +21,6 @@ class Calculator(Widget) :
             if '//' in self.action.text or '**' in self.action.text :
                 raise SyntaxError
             result = eval(sub(r'(?<=[-+*/])*0+(?=[1-9])+','',self.action.text))
-            print('d')
             self.action.text = str(int(result)) if result==int(result)  else str(round(result,15))
             self.last='='
         except :
